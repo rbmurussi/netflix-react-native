@@ -1,42 +1,37 @@
 import React, { useState } from "react";
-import "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import Tabs from "./routes/Tabs";
 import Camera from "./screen/Camera";
 import ChooseIcon from "./screen/ChooseIcon";
 import ProfileToEdit from "./screen/ProfileToEdit";
-import { ProfileContext } from "./context/ProfileContext";
+import ProfileContext from "./context/ProfileContext";
+
+import { configureLanguageToI18n } from "./languages/utils";
 
 const Stack = createStackNavigator();
+configureLanguageToI18n();
 
-const App = () => {
-  const [user, newUser] = useState("Jose");
-  console.log("user", user);
+const App = (props) => {
+  const [user, changeUser] = useState("Jose");
+
+  console.log("User", user);
   return (
-    <ProfileContext.Provider value={{ user, newUser }}>
+    <ProfileContext.Provider value={{ user, changeUser }}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
+            options={{ headerShown: false }}
             name="Tabs"
             component={Tabs}
-            options={{ headerShown: false }}
           />
           <Stack.Screen
+            options={{ headerShown: false }}
             name="Camera"
             component={Camera}
-            options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="ChooseIcon"
-            component={ChooseIcon}
-            options={{ headerShown: true }}
-          />
-          <Stack.Screen
-            name="ProfileToEdit"
-            component={ProfileToEdit}
-            options={{ headerShown: true }}
-          />
+          <Stack.Screen name="ChooseIcon" component={ChooseIcon} />
+          <Stack.Screen name="ProfileToEdit" component={ProfileToEdit} />
         </Stack.Navigator>
       </NavigationContainer>
     </ProfileContext.Provider>

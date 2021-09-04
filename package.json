@@ -1,11 +1,11 @@
 {
+  "name": "netflix",
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "web": "expo start --web",
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-community/geolocation": "^2.0.2",
@@ -16,11 +16,11 @@
     "@react-navigation/bottom-tabs": "^5.3.4",
     "@react-navigation/native": "^5.2.4",
     "@react-navigation/stack": "^5.2.19",
-    "expo": "^37.0.0",
     "appcenter": "3.0.3",
     "appcenter-analytics": "3.0.3",
     "appcenter-crashes": "3.0.3",
     "react-native-code-push": "^6.2.1",
+    "expo": "^37.0.0",
     "i18n-js": "^3.8.0",
     "react": "~16.9.0",
     "react-dom": "16.9.0",
@@ -43,7 +43,7 @@
     "@babel/core": "^7.8.6",
     "babel-jest": "~25.2.6",
     "babel-preset-expo": "^8.1.0",
-    "jest": "~25.2.6",
+    "jest": "^25.2.7",
     "react-test-renderer": "~16.9.0"
   },
   "private": true

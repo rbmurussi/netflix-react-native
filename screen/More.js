@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/native";
 import Avatar from "../components/Avatar";
 import { MaterialIcons } from "@expo/vector-icons";
-import { ProfileContext } from "../context/ProfileContext";
+import ProfileContext from "../context/ProfileContext";
 
 const Screen = styled.View`
   flex: 1;
@@ -84,7 +84,7 @@ const replaceAvatarsWithImage = (props, profilesAvailables) => {
 };
 
 const selectProfile = (navigation, item) => {
-  navigation.navigate("Home", { name: item.name });
+  navigation.navigate("Home");
 };
 
 const editProfile = (navigation, profiles) => {
@@ -96,7 +96,7 @@ const More = (props) => {
 
   return (
     <ProfileContext.Consumer>
-      {({ user, newUser }) => {
+      {({ user, changeUser }) => {
         return (
           <Screen>
             <AvantarsContainer>
@@ -109,7 +109,7 @@ const More = (props) => {
                       uri={item.uri}
                       name={item.name}
                       onPress={() => {
-                        newUser(item.name);
+                        changeUser(item.name);
                         selectProfile(props.navigation, item);
                       }}
                     />
