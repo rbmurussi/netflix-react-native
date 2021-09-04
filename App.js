@@ -1,49 +1,46 @@
-import React from 'react'
+import React, { useState } from "react";
+import "react-native-gesture-handler";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import Tabs from "./routes/Tabs";
+import Camera from "./screen/Camera";
+import ChooseIcon from "./screen/ChooseIcon";
+import ProfileToEdit from "./screen/ProfileToEdit";
+import { ProfileContext } from "./context/ProfileContext";
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Camera from './screen/Camera';
-import ChooseIcon from './screen/ChooseIcon';
-import Tabs from './routes/Tabs';
-import Home from './screen/Home';
-import More from './screen/More';
-import ProfileToEdit from './screen/ProfileToEdit';
-
-const Stack = createNativeStackNavigator();
-
-/*const App = () => {
-	return <Home />
-}*/
+const Stack = createStackNavigator();
 
 const App = () => {
-	return (
-		<NavigationContainer>
-			<Stack.Navigator>
-				<Stack.Screen name="Tabs"
-					component={Tabs}
-					options={{headerShown: false}}
-				/>
-				<Stack.Screen name="ProfileToEdit"
-					component={ProfileToEdit}
-					options={{headerShown: false}}
-				/>
-				<Stack.Screen name="Camera"
-					component={Camera}
-					options={{headerShown: false}}
-				/>
-				<Stack.Screen name="ChooseIcon"
-					component={ChooseIcon}
-					options={{headerShown: false}}
-				/>
-				<Stack.Screen name="Home"
-					component={Home}
-					options={{headerShown: false}}
-				/>
-			</Stack.Navigator>
-		</NavigationContainer>
-	);
-}
+  const [user, newUser] = useState("Jose");
+  console.log("user", user);
+  return (
+    <ProfileContext.Provider value={{ user, newUser }}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Tabs"
+            component={Tabs}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Camera"
+            component={Camera}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ChooseIcon"
+            component={ChooseIcon}
+            options={{ headerShown: true }}
+          />
+          <Stack.Screen
+            name="ProfileToEdit"
+            component={ProfileToEdit}
+            options={{ headerShown: true }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ProfileContext.Provider>
+  );
+};
 
-
-
-export default App
+export default App;
