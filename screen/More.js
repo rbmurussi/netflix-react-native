@@ -95,9 +95,9 @@ const More = (props) => {
   replaceAvatarsWithImage(props, profilesAvailables);
 
   return (
-    <ProfileContext.Consumer>
-      {({ user, changeUser }) => {
-        return (
+    //<ProfileContext.Consumer>
+    //  {({ user, changeUser }) => {
+    //    return (
           <Screen>
             <AvantarsContainer>
               <Row horizontal>
@@ -124,9 +124,9 @@ const More = (props) => {
               <ButtonLabel>Gerenciar perfis</ButtonLabel>
             </NetflixButton>
           </Screen>
-        );
-      }}
-    </ProfileContext.Consumer>
+    //    );
+    //  }}
+    //</ProfileContext.Consumer>
   );
 };
 

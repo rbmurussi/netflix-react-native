@@ -17,7 +17,7 @@ const App = (props) => {
 
   console.log("User", user);
   return (
-    <ProfileContext.Provider value={{ user, changeUser }}>
+    //<ProfileContext.Provider value={{ user, changeUser }}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
@@ -34,7 +34,7 @@ const App = (props) => {
           <Stack.Screen name="ProfileToEdit" component={ProfileToEdit} />
         </Stack.Navigator>
       </NavigationContainer>
-    </ProfileContext.Provider>
+    //</ProfileContext.Provider>
   );
 };
 

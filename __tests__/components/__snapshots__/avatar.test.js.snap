@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Criando component 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "column",
+      "opacity": 1,
+    }
+  }
+>
+  <View>
+    <Image
+      style={
+        Array [
+          Object {
+            "height": 60,
+            "marginBottom": 10,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 10,
+            "width": 60,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "height": 60,
+            "justifyContent": "center",
+            "marginBottom": 10,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 10,
+            "position": "absolute",
+            "width": 60,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "black",
+              "height": 60,
+              "justifyContent": "center",
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+              "opacity": 0.8,
+              "position": "absolute",
+              "width": 60,
+            },
+          ]
+        }
+      />
+      <Icon
+        color="white"
+        name="edit"
+        size={24}
+      />
+    </View>
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+        },
+      ]
+    }
+  />
+</View>
+`;
